@@ -17,7 +17,7 @@ boxes[2] = [175, 400, 90]
 
 PositonX = -w//6.3
 PositonY = h//16
-SpeedConv = 100
+SpeedConv = 5
 
 ModelRun = True
 spawn = False
