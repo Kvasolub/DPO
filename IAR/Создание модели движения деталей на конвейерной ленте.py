@@ -26,8 +26,9 @@ stop = False
 ticket = pygame.time.Clock()
 Text = pygame.font.SysFont('Century', 50)
 
-image = pygame.image.load("qu.png")
+image = pygame.image.load("image of box.png")
 
+Text = pygame.font.SysFont('Century', 50)
 
 while ModelRun:
     ticket.tick(60)
@@ -39,6 +40,14 @@ while ModelRun:
     if spawn == True:
         PositonX += SpeedConv
         screen.blit(box, (PositonX, PositonY))
+        if sizesbox == boxes[0]:
+            part = 'Box №1'
+        elif sizesbox == boxes[1]:
+            part = 'Box №2'  
+        else:
+            part = 'Box №3'
+        TextScreen = Text.render(part,'True', 'White')
+        screen.blit(TextScreen, (0, h//1.1))
     else:
         sizesbox = random.choice(boxes)
         size1, size2 = random.sample(sizesbox, 2)
