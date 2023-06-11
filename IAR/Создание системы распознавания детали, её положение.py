@@ -39,7 +39,6 @@ def scrn():
         approx = cv2.approxPolyDP(i, 25, True)
 
         if len(approx) == 4:
-            approx = approx
             
             detSize1 = ((approx[1,0,0]-approx[0,0,0])**2+(approx[1,0,1]-approx[0,0,1])**2)**0.5
             detSize2 = ((approx[3,0,0]-approx[0,0,0])**2+(approx[3,0,1]-approx[0,0,1])**2)**0.5
@@ -82,7 +81,7 @@ spawn = False
 ticket = pygame.time.Clock()
 Text = pygame.font.SysFont('Century', 50)
 
-image = pygame.image.load("qu.png")
+image = pygame.image.load("image of box.png")
 
 countRights = 0
 
@@ -123,11 +122,6 @@ while ModelRun:
 
     partREAL = checkingSizes(sizesbox)
     partDetOPENCV = checkingSizes(scrn())
-
-    # TextScreenReal = Text.render(partREAL,'True', 'White')
-    # screen.blit(TextScreenReal, (0, h//1.1))
-    # TextScreenDet = Text.render(partDetOPENCV,'True', 'White')
-    # screen.blit(TextScreenDet, (w-300, h//1.1))
 
     if partREAL==partDetOPENCV:
         countRights +=1
